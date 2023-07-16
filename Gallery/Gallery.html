@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="PL">
+<head>
+    <link rel='stylesheet' href='styles_gallery.css'>
+    <link rel='stylesheet' href='../styles_all.css'>
+    <title>Galleria</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.1.js"></script>
+    <script src="../jquery-ui.min.js"></script>
+    <script src="../Scroll.js"></script>
+    <script src="../All.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="link">
+            <div class="logo button">
+                <img class="button" src="../Images/Logo.png" alt="Logo">
+            </div>
+
+            <div class="logo nazwa">
+                <p class="text_nazwa">Mity Japonii w pigułce</p>
+            </div>
+        </a>
+        <div id="home">
+            <p class="menu_drop">Menu</p>
+            <div class="drop">
+                <a href="../index.html">Strona główna</a>
+                <div class="info">
+                    <a href="../Gods/Gods.html">Bogowie</a>
+                    <a href="../Yokai/Yokai.html">Yokai</a>
+                    <a href="../Tales/Tales.html">Powieści</a>
+                </div>
+                <a href="../Gallery/Gallery.html">Galeria</a>
+                <a href="../Quiz/Quiz.html">Quiz</a>
+                <a href="../Links/Links.html">Przydatne linki</a>
+            </div>
+        </div>
+        <div class="nav">
+            <a class="niema" href="../Gods/Gods.html">Bogowie</a>
+        </div>
+        <div class="nav">
+            <a class="niema" href="../Yokai/Yokai.html">Yokai</a>
+        </div>
+        <div class="nav">
+            <a class="niema" href="../Tales/Tales.html">Powieści</a>
+        </div>
+    </nav>
+    <article>
+        <header>
+            <h2 class="text_gl">Galeria</h2>
+        </header>
+        <div id="ukl_zdj">
+        </div>
+        <script>
+            const sel = document.createElement("select");
+            sel.id = "ukl_str";
+            document.getElementById("ukl_zdj").appendChild(sel);
+            var opt = document.createElement("option");
+            opt.id = "0zdj";
+            opt.value = "0"
+            opt.innerHTML = "Uklad zdjęć";
+            document.getElementById("ukl_str").appendChild(opt);
+            opt = document.createElement("option");
+            opt.id = "1zdj";
+            opt.value = "1"
+            opt.innerHTML = "Po 1 zdjęciu w wierszu";
+            document.getElementById("ukl_str").appendChild(opt);
+            opt = document.createElement("option");
+            opt.id = "2zdj";
+            opt.value = "2"
+            opt.innerHTML = "Po 2 zdjęcia w wierszu";
+            document.getElementById("ukl_str").appendChild(opt);
+            opt = document.createElement("option");
+            opt.id = "3zdj";
+            opt.value = "3"
+            opt.innerHTML = "Po 3 zdjęcia w wierszu";
+            document.getElementById("ukl_str").appendChild(opt);
+            opt = document.createElement("option");
+            opt.id = "4zdj";
+            opt.value = "4"
+            opt.innerHTML = "Po 4 zdjęcia w wierszu";
+            document.getElementById("ukl_str").appendChild(opt);
+            const inp = document.createElement("input");
+            inp.id = "ukl";
+            inp.name = "ukl";
+            inp.type = "button";
+            inp.onclick = function () {
+                var ile_zdj = document.getElementById("ukl_str").value;
+                if (ile_zdj == 1) {
+                    document.getElementById("Galeria_div").className = "galeria1";
+                }
+                else if (ile_zdj == 2) {
+                    document.getElementById("Galeria_div").className = "galeria2";
+                }
+                else if (ile_zdj == 4) {
+                    document.getElementById("Galeria_div").className = "galeria4";
+                }
+                else {
+                    document.getElementById("Galeria_div").className = "galeria3";
+                }
+            };
+            inp.value = "Zatwiedź";
+            document.getElementById("ukl_zdj").appendChild(inp);
+        </script>
+        <div id="Galeria_div" class="galeria3">
+            <figure>
+                <img id="Inari" src="Images/inari.jpg" alt="Inari">
+                <figcaption>Inari</figcaption>
+            </figure>
+            <figure>
+                <img src="Images/spider.jpg" alt="Spider yokai">
+                <figcaption>Pająk yokai</figcaption>
+            </figure>
+            <figure>
+                <img src="Images/amaterasu_okami.jpg" alt="Amaterasu i Okami">
+                <figcaption>Amaterasu i Okami</figcaption>
+            </figure>
+            <figure>
+                <img src="Images/smok.jpg" alt="Smok japonski">
+                <figcaption>Smok</figcaption>
+            </figure>
+            <figure>
+                <img src="Images/nue.jpg" alt="Nue">
+                <figcaption>Nue</figcaption>
+            </figure>
+            <figure>
+                <img src="Images/otoroshi.jpg" alt="Otoroshi">
+                <figcaption>Otoroshi</figcaption>
+            </figure>
+        </div>
+    </article>
+    <footer>
+        <p>Autor: Dmytro Dzhusov. Temat: Moje hobby</p>
+        <p>Rok: 2022. WETI Informatyka</p>
+    </footer>
+</body>
+</html>
